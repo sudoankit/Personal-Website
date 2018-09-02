@@ -9,6 +9,10 @@
   <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -17,9 +21,61 @@ MathJax.Hub.Config({
 </script>
 
 
+
 <!-- //////////////////// CSS BAKED INTO HTML ////////////////////// -->
 
   <style type="text/css">
+
+  /*  PACE Setup */
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace.pace-inactive .pace-progress {
+  display: none;
+}
+
+.pace .pace-progress {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  height: 5rem;
+  width: 5rem;
+
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -ms-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.pace .pace-progress:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: .5rem;
+  content: attr(data-progress-text);
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  font-size: 5rem;
+  line-height: 1;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.19999999999999996);
+}
+
+.github-icon-svg,
+.twitter-icon-svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 3px;
+}
 
 
     /* Color scheme stolen from Sergey Karayev */
@@ -29,8 +85,8 @@ MathJax.Hub.Config({
   font-size: 85%;
   background-color: rgba(27,31,35,0.05);
   border-radius: 3px;
-font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 15px;
+font-family: Menlo, Consolas, "Liberation Mono", Courier, monospace;
+  font-size: 16px;
     }
 
     a {
@@ -42,26 +98,30 @@ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, mono
     text-decoration:none;
     }
     body,td,th,tr,p,a {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    font-size: 15px;
+    font-family: "Avenir", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
     text-align: justify;
+    zoom: 1.01;
     }
     strong {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    font-size: 15px;
+    font-family: "Avenir",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
     }
     heading {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    font-size: 22px;
+    font-family: "Avenir",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 23px;
     }
     papertitle {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    font-size: 18px;
+    font-family: "Avenir",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 17px;
     font-weight: 700
     }
     name {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    font-size: 32px;
+    font-size: 44px;
+    border: 2px solid black;
+    padding: 10px 10px 10px 10px;
+
     }
     .one
     {
@@ -111,25 +171,30 @@ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, mono
         <p align="center">
           <center><name>Ankit Panda</name></center>
         </p>
+        <br>
 
+        <center><b>
+          <a href="mailto:ankitpanda1014@gmail.com">Email</a> &nbsp/&nbsp
+          <a href="resume.pdf">CV</a> &nbsp/&nbsp
+          <a href="http://sudoankit.github.io">Blog</a> &nbsp/&nbsp
+          <a href="https://sudoankit.github.io/mathblog/">Math Blog</a>
+        </b></center>
+        <br>
+        <center><b>
+          <a href="https://twitter.com/sudoankit">Twitter</a>&nbsp/&nbsp
+          <a href="https://github.com/sudoankit">Github</a>  
+        </b></center>
+        <br>
         <p>I'm working at <a href="http://www.iitbbs.ac.in">IIT-Bhubaneswar</a>, India with <a href="http://www.iitbbs.ac.in/profile.php/dpdogra/">Prof. Debi Prosad Dogra</a> on augmented reality and with <a href="https://sites.google.com/site/dashkajaya/home">Ajaya K Dash</a> on deep variational hand pose estimation.
         </p>
         <p>
         Last month I completed my undergraduate degree at <a href="https://www.iiit-bh.ac.in/research/publications">IIIT-BH.</a>
         </p>
         <br>
-        <center>
-          <a href="mailto:ankitpanda1014@gmail.com">Email</a> &nbsp/&nbsp
-          <a href="resume.pdf">CV</a> &nbsp/&nbsp
-          <a href="http://sudoankit.github.io">Blog</a> &nbsp/&nbsp
-          <a href="https://sudoankit.github.io/mathblog/">Math Blog</a> &nbsp/&nbsp
-          <a href="https://twitter.com/sudoankit">Twitter</a>&nbsp/&nbsp
-          <a href="https://github.com/sudoankit">GitHub</a> <!-- &nbsp/&nbsp -->
-          <!-- <a href="resume.pdf">Art and Illustrations</a> -->
-        </center>
+        
         </td>
         <td width="33%">
-        <img src="me.jpeg">
+        <img src="me.jpeg" border="1px solid black">
         </td>
       </tr>
       </table>
@@ -144,15 +209,14 @@ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, mono
           <p>
          	Research interests include computer vision and graphics, optimisation and energy landscape of neural nets, neuroscience and cuisine. 
          </p>
-         Currently working on VAEs in hand pose estimation and augmented reality graphics rendering.
-          <br>
-          <br>
-          In future I really would like to learn about fluid flow, quantum mechanics, differential geometry and molecular and cellular biology, in particular DNA repair and try applying machine learning concepts.
-          <!-- Representative papers are <span class="highlight">highlighted</span>. -->
-          </p>
-        </td>
+         Currently working on <b>deep VAEs in hand pose estimation,  augmented reality graphics rendering and 3D object detection.</b>
+          </td>
       </tr>
       </table>
+          <!-- <br><font color="grey" size="2px">
+          In future I really would like to learn about fluid flow, differential geometry and molecular and cellular biology, in particular DNA repair.</font> -->
+          <!-- Representative papers are <span class="highlight">highlighted</span>. -->
+        
 
 
    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
@@ -231,7 +295,7 @@ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, mono
         <td width="25%"><img src="ar-exp-1.jpg" alt="prl" width="200" height="170" border="1"></td>
         <td width="75%" valign="top">
         <p>
-          <a href="https://www.dropbox.com/s/tt6srdx2jogn6av/report-100%25.pdf?dl=0"><papertitle>Augmented Reality Methods For Education</papertitle></a>
+          <a href="https://www.dropbox.com/s/tt6srdx2jogn6av/report-100%25.pdf?dl=0"><papertitle>Augmented Reality Methods For Education, arXiv, 2018</papertitle></a>
           <br>
           <strong>Ankit Panda</strong>
           <br>
@@ -244,7 +308,7 @@ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, mono
 
 
       </tr>
-      <td width="25%"><img src="eeye.jpg" alt="prl" width="200" height="110" border="1"></td>
+      <td width="25%"><img src="eeye.jpg" alt="prl" width="200" height="114" border="1"></td>
         <td width="75%" valign="top">
         <p>
           <papertitle>A Review on Convolutional Neural Networks for Eye Tracking
@@ -378,28 +442,22 @@ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, mono
       </tr>
 
 <tr>
-        <td width="25%"><img src="italics.jpg" alt="prl" width="200" height="350"></td>
-        <td width="75%" valign="top">
-        <p>
-          <a href="https://sudoankit.github.io/italics/"><papertitle><i>italics</i></papertitle> </a>
-        </papertitle>
-          <br>
-          <i>Collected writings and poems</i>, <strong>Ankit Panda</strong> 
-          <br>
+
+  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading>Miscellaneous</heading>
           <p>
-        <strong>Subterfuge.</strong> I was worried about it. That someone whom I know would warp my conscience and subterfuge with it. It ain’t now so.
-</p>
-<p>
-  <strong>Believe.</strong> Bonding. Relations. The strong ones. The valiant sea that we sail. The mast that never breaks. The sails that fill their chests with pride. With you beside, I ain’t sinking anymore.
-<p>
-  <strong>Telepathy.</strong> A hocus in most eyes. A wonder in some. A dream. Connecting still being far. The humanely inhuman power to know about someone not with you. About the person you care. I thought it was a bluff as science wasn’t sure. I ain’t thinking that now.
-</p>
-<strong>Pain.</strong> A multidimensional entity. That can’t be shared. Which is harsh. From which you can’t run away. You are stuck. I was stoic. It ain’t so now.
-<p>
-<strong>Friendship.</strong> A power from within the four chambered hearts. An emotion endless. A feeling of unity. The sunshine amidst the rain. I love it now.
-</p>
+            I mantain <a href="https://github.com/sudoankit/academic-formats">a repository</a> where I am collecting tips and tricks for acadmics who are submitting a paper for the first time to conferences, journals etc. I made this <a href="https://github.com/sudoankit/AiConfBot"> Telegram bot</a>, <code>@AiConfBot</code> which gives deadline for conferences through Telegram and am <a href="https://github.com/sudoankit/pythonCC">writing a python crash course/guide</a> for Academics who want to jump from MATLAB/C++ to Python. Also, check my <a href="https://github.com/sudoankit/notes-for-the-future">notes-for-the-future repo</a> for some writing advice!
+
+          </p>
+          <!-- Representative papers are <span class="highlight">highlighted</span>. -->
+
         </td>
       </tr>
+      </table>
+
+
           
 </table>  
 <!--  <table width="100%" align="center"  border="0" cellspacing="0" cellpadding="20">
@@ -414,15 +472,15 @@ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, mono
     <p>
       I used to speedsolve the Rubik's Cube and am always ready to discuss new algorithms to improve! 
 </p>
+
+<a href="https://twitter.com/sudoankit">Twitter</a>&nbsp/&nbsp
+          <a href="https://github.com/sudoankit"><img src="github.png" width="5%"></a>       <a href="resume.pdf">Art and Illustrations</a> 
+
       </table>
 
  -->
     </body>
 <hr>
     
-   <center> 2018, Ankit Panda. CC-BY-4.0</center>
-    <footer>
-      <hr>
-      Check the <a href="http://jonbarron.info">source</a> of this awesome template.
-    </footer>
+   <center> 2018, Ankit Panda.  CC-BY-4.0 &nbsp; <b>|</b> &nbsp; Check the <a href="http://jonbarron.info">source</a> of this awesome template.</center>
 </html>
