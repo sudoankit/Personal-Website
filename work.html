@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta name=viewport content=“width=800”>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+
+<!-- //////////////////// MATHJAX CONFIG ////////////////////// -->
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+
+
+<!-- //////////////////// CSS BAKED INTO HTML ////////////////////// -->
+
+  <style type="text/css">
+
+  /*  PACE Setup */
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace.pace-inactive .pace-progress {
+  display: none;
+}
+
+.pace .pace-progress {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  height: 5rem;
+  width: 5rem;
+
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -ms-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.pace .pace-progress:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: .5rem;
+  content: attr(data-progress-text);
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  font-size: 5rem;
+  line-height: 1;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.19999999999999996);
+}
+
+.github-icon-svg,
+.twitter-icon-svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 3px;
+}
+
+
+    /* Color scheme stolen from Sergey Karayev */
+    code{
+      padding: 0.1em 0.3em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+font-family: Menlo, Consolas, "Liberation Mono", Courier, monospace;
+  font-size: 16px;
+    }
+
+    a {
+    color: #1772d0;
+    text-decoration:none;
+    }
+    a:focus, a:hover {
+    color: #f09228;
+    text-decoration:none;
+    }
+    body,td,th,tr,p,a {
+    font-family: "Avenir", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    zoom: 1.01;
+    }
+    strong {
+    font-family: "Avenir",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    }
+    heading {
+    font-family: "Avenir",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 23px;
+    }
+    papertitle {
+    font-family: "Avenir",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 17px;
+    font-weight: 700
+    }
+    name {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 44px;
+    border: 2px solid black;
+    padding: 10px 10px 10px 10px;
+
+    }
+    .one
+    {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    }
+    .two
+    {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+    }
+    .fade {
+     transition: opacity .2s ease-in-out;
+     -moz-transition: opacity .2s ease-in-out;
+     -webkit-transition: opacity .2s ease-in-out;
+    }
+    span.highlight {
+        background-color: #ffffd0;
+
+    }
+    span.highlight2 {
+      background-color: #D4E6F1;
+    }
+  </style>
+
+
+<!-- //////////////////// END CSS ////////////////////// -->
+
+
+<!-- //////////////////// HEADER START ////////////////////// -->
+
+  <link rel="icon" type="image/png" href="calabi.png">
+  <title>Ankit Panda</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  </head>
+  <body>
+  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+    <td>
+      
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      
+      </table>
+
+
+<!-- //////////////////// HEADER END ////////////////////// -->
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading><h2>Projects and Publications</h2></heading>
+          <p>
+         	Research interests include computer vision and graphics, optimisation and energy landscape of neural nets, neuroscience and cuisine. 
+         </p>
+         Currently working on <b>deep VAEs in hand pose estimation,  augmented reality graphics rendering and 3D object detection.</b>
+          </td>
+      </tr>
+      </table>
+          <!-- <br><font color="grey" size="2px">
+          In future I really would like to learn about fluid flow, differential geometry and molecular and cellular biology, in particular DNA repair.</font> -->
+          <!-- Representative papers are <span class="highlight">highlighted</span>. -->
+        
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+          <hr>
+        <heading>Publications</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="plutoar.jpg" alt="prl" width="200" height="200"></td>
+        <td width="75%" valign="top">
+        <p>
+          
+          <papertitle>PlutoAR: An Augmented Reality Interpreter for Education</papertitle>
+          <br>
+          <span class="highlight2"><a href="https://arxiv.org/abs/1809.00375">arXiv, September, 2018</a></span>
+          <br>
+          Shourya Pratap Singh, <strong>Ankit Panda</strong>, Susobhit Panigrahi, Ajaya K Dash, Debi Prosad Dogra.
+          <br>
+          <br>
+          <span class="highlight">This entry won the first prize of 5000$ at <a href="https://www.hackerearth.com/sprints/unitedbyhcl/">UnitedByHCL Hackthon.</a></span>
+        <p>
+          PlutoAR is an affordable, tangible Augmented Reality Interpreter for the K-10 Curriculum. The kit consists of a "Launchpad" where you place "tiles" to create programmable experience, observable using the Android app, such as taking off a rocket, navigating a maze using control loops and solving simple math.
+        </p>
+        
+        </td>
+      </tr>
+
+      </table>
+
+
+   <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+          <hr>
+        <heading>Projects</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="jet2.png" alt="prl" width="200" height="240" border="1"></td>
+        <td width="75%" valign="top">
+        <p>
+         <a href="https://sudoankit.github.io/mathblog/2017/04/28/triangulation-primer/"> <papertitle>Delaunay Triangulation for Clustering High Energy Jet Particles.</papertitle> </a>
+          <br>
+          <br>
+          <strong>Ankit Panda</strong>
+          <br>
+          
+        <p>
+          Performed clustering of artificially generated jet particles ( <code>ROOT</code> ) by grouping them using Delaunay Triangulation through the <code>CGAL</code> library.
+          Also made created a test and perfomance analysis suite in <code>Go</code> for clustering.
+        </p>
+        <p> The hyperlink goes to my tutorial on Delaunay Triangulation.
+        </p>
+        </td>
+      </tr>
+      
+      <tr>
+        <td width="25%"><img src="image1000S.jpg" alt="prl" width="200" height="150" border="1"></td>
+        <td width="75%" valign="top">
+        <p>
+          <papertitle>Raytracer using OpenGL</papertitle>
+          <br>
+          <br>
+          <strong>Ankit Panda</strong>
+          <br>
+          
+        <p>
+          Made a minimal raytracer with Phong Blinn Shading Model using <code>OpenGL</code>.
+        </p>
+        </td>
+      </tr>
+
+      </table>
+
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+          <hr>
+        <heading>Course Projects</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="ar-exp-1.jpg" alt="prl" width="200" height="170" border="1"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://www.dropbox.com/s/tt6srdx2jogn6av/report-100%25.pdf?dl=0"><papertitle>Augmented Reality Methods For Education</papertitle></a>
+          <br>
+          <strong>Ankit Panda</strong>
+          <br>
+          <br>
+          <span class="highlight">Awarded perfect score in institute, top 10% from 250 submissions.</span>
+        <p>
+          This report raises questions about the condition of the Indian education system, details about school trips, psychology of children, reviews and discusses thoughts on AR as a supplement, a viable interactive solution to make classrooms more interactive.
+        </p>
+        </td>
+
+
+      </tr>
+      <td width="25%"><img src="eeye.jpg" alt="prl" width="200" height="114" border="1"></td>
+        <td width="75%" valign="top">
+        <p>
+          <papertitle>A Review on Convolutional Neural Networks for Eye Tracking
+        </papertitle>
+          <br>
+          <strong>Ankit Panda</strong>, Shourya Pratap Singh 
+          <br>
+        <p>
+          In our seminar report, we explain a novel way to track the eye using convolutional neural networks. We rely heavily on the research carried out by Krafka and Khosla on their paper titled, <i>"Eye Tracking for Everyone"</i>, CVPR, 2016.
+        </p>
+        </td>
+      </table>
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+          <hr>
+        <heading>Social Work</heading>
+        </td>
+      </tr>
+
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="svs-2.jpg" alt="prl" width="200" height="160"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://sudoankit.github.io/2018/05/03/school-resolution/"><papertitle><i>Mystery of the Future</i> and Image Recognition Workshop</papertitle></a>
+        </papertitle>
+          <br>
+          
+           at <font color="blue">SVS School, NITC, Kozhikode, India.</font>
+          <br>
+        <p>
+          I gave a small talk about STEM and explained stuff about connectomes, SpaceX rockets and AI to student's in 9th and 10th standard. 
+        </p>
+        <p>
+        I also conducted an image recognition workshop for 11th where they had to write code using <code>keras</code> for image detection using ResNet and VGGNet.
+        </p>
+        </td>
+      </tr>
+      </table>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+          <hr>
+        <heading>Expositions and Tutorials</heading>
+        </td>
+      </tr>
+      </table>
+<table width="100%" align="center" border="0" cellpadding="20">
+
+  <tr>
+        <td width="25%"><img src="AOA.png" alt="prl" width="200" height="170"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://sudoankit.github.io/AOA/"><papertitle>Allure of Academia
+        </papertitle></a>
+          <br>
+          <span class="highlight"><i>Ongoing Project</i></span>, <strong>Ankit Panda</strong> 
+          <br>
+        <p>
+          My new year resolution for 2018. 
+        </p>
+        <p>
+          Noting down, explaining and making all of you folks understand an academic paper most efficiently. 
+        </p>
+        <p>
+          In short, $ \operatorname{argmin}\text{(Papers)}$
+        </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="surf.png" alt="prl" width="200" height="130" border="1"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://sudoankit.github.io/mathblog/2018/01/01/geometry-lagrange-multiplier/"><papertitle>Geometrical Explorations of the Lagrangian Multipliers
+        </papertitle></a>
+          <br>
+          <strong>Ankit Panda</strong> 
+          <br>
+        <p>
+          A river bed, some beads and a 3D surface plot.
+        </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td width="25%"><img src="scatter_eng.jpeg" alt="prl" width="200" height="160" border="1"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://sudoankit.github.io/2017/04/06/engineering-in-india/"><papertitle>Engineering in India.
+        </papertitle></a>
+          <br>
+          <i>Critique Article</i>, <strong>Ankit Panda</strong> 
+          <br>
+        <p>
+          Finding out the discrimination of the grading system of India through plots of marks versus position of in the class.
+        </p>
+        </td>
+      </tr>
+      </table>  
+
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+          <hr>
+        <heading>Literature</heading>
+        </td>
+      </tr>
+      </table>
+<table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="brain.jpg" alt="prl" width="200" height="250" border="1"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://www.dropbox.com/s/xgwyqngoz1rhgu4/ae-manuscript-v0.2.pdf?dl=0"><papertitle>Some Other Kind of Love.
+        </papertitle></a>
+          <br>
+          <i>Non-Fiction</i>, hyperlinked version 0.2 draft, <strong>Ankit Panda</strong> 
+          <br>
+        <p>
+          We often search frantically for our answer which is most of time hidden in front of us. In this book (I hope it becomes a book) I will try to explore some of the most fundamental beliefs about emotions and connect the dots through science and mathematics.
+        </p>
+        <p>
+          Basically this book is for the artificial sentient beings in the future. I hope when they read this they will <i>feel</i> something, <i>some other kind of love.</i>
+          </p>
+          <p>
+            <a href="https://commons.wikimedia.org/wiki/File:Normal_axial_T2-weighted_MR_image_of_the_brain.jpg">Thumbnail credit, CC-BY-4.0. </a>
+          </p>
+        </td>
+      </tr>
+
+<tr>
+
+  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <hr>
+          <heading>Miscellaneous</heading>
+          <p>
+            I mantain <a href="https://github.com/sudoankit/academic-formats">a repository</a> where I am collecting tips and tricks for acadmics who are submitting a paper for the first time to conferences, journals etc. I made this <a href="https://github.com/sudoankit/AiConfBot"> Telegram bot</a>, <code>@AiConfBot</code> which gives deadline for conferences through Telegram and am <a href="https://github.com/sudoankit/pythonCC">writing a python crash course/guide</a> for Academics who want to jump from MATLAB/C++ to Python. Also, check my <a href="https://github.com/sudoankit/notes-for-the-future">notes-for-the-future repo</a> for some writing advice!
+
+          </p>
+          <!-- Representative papers are <span class="highlight">highlighted</span>. -->
+
+        </td>
+      </tr>
+      </table>
+
+
+          
+</table>  
+<!--  <table width="100%" align="center"  border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+        <heading>Miscellaneous</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+<td>
+    <p>
+      I used to speedsolve the Rubik's Cube and am always ready to discuss new algorithms to improve! 
+</p>
+
+<a href="https://twitter.com/sudoankit">Twitter</a>&nbsp/&nbsp
+          <a href="https://github.com/sudoankit"><img src="github.png" width="5%"></a>       <a href="resume.pdf">Art and Illustrations</a> 
+
+      </table>
+
+ -->
+    </body>
+<hr>
+    
+   <center> 2018, Ankit Panda.  CC-BY-4.0 &nbsp; <b>|</b> &nbsp; Check the <a href="http://jonbarron.info">source</a> of this awesome template.</center>
+</html>
