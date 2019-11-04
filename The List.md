@@ -165,9 +165,6 @@
 - [ ] Eat at a Michelin 3-star restaurant
 - [ ] Camping on mountains 
 - [ ] Drive a vintage car, maybe the original Ford.
-- [ ] Win a 
-	- [ ] Classic Challenge,
-	- [ ] Grand Challenge in Clash Royale
 - [ ] Play StarCraft II
 - [ ] Six Flags and Disney Land in Florida 
 - [ ] Visit Hobbiton at NZ
@@ -205,6 +202,7 @@
 - [ ] Visit the South Pole 
 - [x] Participate in ACM ICPC 
 - [ ] Reach Code-Jam Top 50
+- [ ] Reach International Master (IM) rank in Chess
 - [ ] Become <font color="red">red </font>on Codeforces 
 - [ ] Complete a rigorous mathematics book. 
 - [ ] Write a mathematics book
@@ -213,7 +211,6 @@
 	- [ ] Non-fiction
 	- [ ] Academic
 - [ ] Dive at Y-40 ( deepest pool )
-- [ ] 
 - [ ] Visit graves of:
 	- [ ] Newton
 	- [ ] Paul Dirac
@@ -235,12 +232,9 @@
 - [ ] Meet Grigori Perelman 
 - [ ] Attend the International Congress of Mathematics
 - [ ] Understand Perelman's Proof of the Thurston's geometrization conjecture thus Poincare Conjecture, 3 papers (differential geometry).
-- [ ] Start a podcast
 - [ ] Start an educational YouTube channel:
 	- [ ] 10k subscribers
 	- [ ] 100k subscribers
-	- [ ] 1M subscribers
-	- [ ] 10M subscribers
 - [ ] Learn digital art
 - [x] Eat Pav Bhaji
 - [ ] Carnival at Brazil
@@ -276,3 +270,13 @@ To be updated. Feel free to add something from my list to yours.
 
 Au revoir, 
 Ankit
+
+---
+
+<u>**Changes: **</u>  
+(For detailed changes, look at the GitHub repo: https://github.com/sudoankit/Personal-Website/commits/master/The%20List.md)
+
+<font color="grey">04/11/2019: Removed some video game achievements and lowered YouTube expectations, lol  </font> 
+
+<font color="grey">31/10/2019: Created and pushed this list, added around 20 items to the one I had in Notes.</font>
+
