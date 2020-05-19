@@ -1,0 +1,510 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>vglist</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><h1><a name="video-game-backlog-🎮--2020" class="md-header-anchor"></a><span>Video Game Backlog 🎮 | 2020</span></h1><p><span>Oh boy, I haven&#39;t really played many video games from 2012 but I really wanna try these. I think video games are magical and letting you experience a story which you can control is fascinating. </span></p><p><span>I too am interested in computer graphics (rendering, ray tracing, general GPU optimizations and illumination) so video games for me are quite interesting to dissect and appreciate the CG technology evolving so rapidly though these years. </span></p><p><span>Digital Foundry has some great videos if you&#39;re starting out.</span></p><hr /><p><span>My first game was  </span><em><span>Speed Busters: American Highways</span></em><span>, a 1998 racing game from Ubisoft. It was way ahead of it&#39;s time. Brilliantly developed race tracks, amazing OST, weather conditions!, ~3D graphics and ran great. In case you still want to try it out you still get from </span><a href='https://store.ubi.com/ie/game?pid=58c190c3ef3aa5e4498b4567&amp;dwvar_58c190c3ef3aa5e4498b4567_Platform=pcdl&amp;edition=Standard%20Edition&amp;source=detail'><span>Ubisoft</span></a><span> or </span><a href='https://www.gog.com/game/speed_busters'><span>GOG</span></a><span>.</span></p><p><span>My second one was </span><em><span>Toy Story 2: Buzz Lightyear to the Rescue</span></em><span>, a 1999-2000 by Traveller&#39;s Tales, Activision and Disney. This was an amazing game, really a tough one for a kid like me. Great levels, great graphics, hard and fun. My first </span><em><span>Souls-borne.</span></em><span> lol</span></p><p><span>Over the years I have played quite a few but some memorable ones are Recoil, DOOM 95, Serious Sam, Age of Empires II and Age of Mythology, GTA Vice City, San Andreas, Pokemon Emerald, Golden Sun, Celeste, Into the Break, Assassin Creed II, etc.</span></p><hr /><p><span>I have categorized them loosely using genres and publishers/devs, I really enjoy most of them except horror visual novels, interactive drama and games with turn based combat maybe except Pokemon and Golden Sun.</span></p><hr /><p><strong><em><span>Legend:</span></em></strong></p><p><span>I am not rating any game, just using a binary color code for recommendations, </span><mark><span>Highlighted games</span></mark><span> are really good, non highlighted ones are good enough. The ones I </span><del><span>strike out</span></del><span> are not recommended. I also write short  liners for most of them.</span></p><p><span>I am using the following template to log stuff:</span></p><p><font color="blue"><span>[Completion Status</span><span>]</span><span>[Video Game] [Date Completed</span><span>]</span><span>[%complete]</span></font></p><p><span>These are personal and thus don&#39;t blindly buy/play them as you might not like it. I suggest watching gameplay videos first. </span></p><p><em><span>Enjoy!</span></em></p><hr /><h2><a name="indie-puzzlers" class="md-header-anchor"></a><span>Indie, Puzzlers</span></h2><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Journey</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Abzu</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Rime</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Hob</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Firewatch </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Witness</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Celeste</span></mark><span>, </span><em><span>&quot;Masterpiece&quot;</span></em><span>, Nov 2019, 33 hours, ~80%, no DLC.</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Spiro The Ignited Trilogy</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Baba is You*</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>Limbo, 4 hours, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Inside</span></mark><span>, </span><em><span>&quot;Masterpiece, short&quot;</span></em><span> ~3 hours, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Katana Zero</span></mark><span>,</span><em><span>&quot;Masterpiece, short&quot;</span></em><span> 7 hours, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Shovel Knight</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Ori and the Blind Forest</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Ori and the Will of Wisps</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Supraland</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>A Short Hike, </span><em><span>&quot;meh, ok&quot;</span></em><span>, 1 hour, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Gris</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>A Hat in Time</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Outer Wilds</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Puddle Knights</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Stephen&#39;s Sausage Roll</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Opus Magnum</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Pedestrian</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Messenger</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Little Nightmares</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Strider (2014, PS4)</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Kerbal Space Program </span></p></li></ul><p>&nbsp;</p><h2><a name="oldies-and-goldies" class="md-header-anchor"></a><span>Oldies and Goldies</span></h2><p><strong><em><span>Bethesda</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Elder Scrolls IV Oblivion</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Fallout 3</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Fallout New Vegas</span></p></li></ul><p><strong><em><span>Hack and Slash</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Kingdom of Amalur Reckoning</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Bayonetta &amp; Vanquish Remastered (PS4)</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>Shank 1 &amp; Shank 2: &quot;</span><em><span>Alright</span></em><span>&quot; 5+6hrs, Main%</span></p></li></ul><p>&nbsp;</p><h2><a name="rpg-----fpsaction-series-🌟" class="md-header-anchor"></a><span>RPG — FPS/Action Series 🌟</span></h2><p><strong><em><span>Steam Top 250</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Portal 2</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Witcher 3 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Terraria </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Stardew Valley</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Euro Truck Simulator 2</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Binding of Isaac </span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><del><span>Rimworld</span></del><span>, </span><em><span>&quot;didn&#39;t like it, too much RNG&quot;</span></em><span> </span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Counter Strike Global Offensive</span></mark><span>, all versions. </span><em><span>&quot;only with known friends&quot;</span></em><span>, ~50hours+</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Don&#39;t Starve</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Slay the Spire</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Rockstar</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>GTA V</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Red Dead Redemption 2 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>LA Noire </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Batman Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Batman Arkham Asylum </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Batman Arkham City</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Batman Arkham Knight </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Borderlands Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Borderlands 2</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Borderlands The Pre-Sequel</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Borderlands 3</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Misc Action-RPG</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Star Wars Jedi: Fallen Order</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Control </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Outer Worlds</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Plague’s Tale Innocence</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Space is cool, right?</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Mass effect Andromeda</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Journey to the Savage Planet</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Mafia Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Mafia 1 (2020, remake)</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Mafia 2 (2020, remaster)</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Mafia 3 (2020, rerelease)</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Bioshock Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Bioshock 1</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Bioshock 2</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Bioshock Infinity </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Pokemon Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>Pokemon Leaf Green, &quot;Pretty good&quot;, 30 hours, %Any, %Main</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Pokemon Emerald</span></mark><span>, &quot;Masterpiece!&quot;, ~66 hours, ~90% </span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>Pokemon Diamond, &quot;ok!, nothing new&quot;, 22 hours, %Main</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><del><span>Pokemon Hear Gold</span></del><span>, </span><em><span>&quot;got bored of the same formula&quot;</span></em><span>, DNF, ~5 hours.</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Microsoft Stuff</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Sunset Overdrine</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Quantum Break</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Gears 5</span></p></li></ul><p>&nbsp;</p><h2><a name="first-person-shooters-🔫" class="md-header-anchor"></a><span>First Person Shooters 🔫</span></h2><p><span>Call of Duty, Battlefield and Misc.</span></p><p><em><span>Campaigns only</span></em><span>, maybe MP. I&#39;m not really into MP as I don&#39;t see playing video games to be a competitive. MP is stressful and sometimes with toxic communities and rampant cheaters, it&#39;s no fun.</span></p><hr /><p><strong><em><span>Call of Duty Series</span></em></strong><span> </span></p><ul><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>COD I</span></mark><span>, &quot;</span><em><span>Genre Defining</span></em><span>&quot;, ~7 hours, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>COD II, &quot;</span><em><span>Good</span></em><span>&quot; </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>COD Black Ops</span></mark><span>, &quot;Wow, brilliant campaign&quot;, ~12 hours, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD Black Ops II</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD Black Ops III</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>COD WW2, </span><em><span>&quot;Eh, Rinse and Repeat&quot;</span></em><span>, ~6 hours, Main%</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD MW 1 Remastered </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD MW 2 Remastered </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD MW 3 Remastered </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD Ghosts </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD Infinite Warfare </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD Advanced Warfare </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>COD MW (2019)</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Battlefield Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Battlefield 3</span></mark><span>, </span><em><span>&quot;I loved it and I still do, beautiful and powerful&quot;</span></em><span>, 12 hours, Main% x2</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Battlefield 4</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Battlefield Hardline</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Battlefield 1</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Battlefield 5</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Misc Shooters</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Metal Gear Solid V Ground Zeroes + Phantom Pain</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Killzone Shadow Fall (PS4)</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Titanfall 2</span></mark><span>, </span><em><span>&quot;Sentimental and Seminal FPS Campaign&quot;</span></em><span>, 10 hours, Main%.</span></p></li></ul><p>&nbsp;</p><h2><a name="square-enix-💫" class="md-header-anchor"></a><span>Square Enix 💫</span></h2><p><strong><em><span>Tomb raider Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Tomb Raider</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Rise of the Tomb Raider</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Shadow of the Tomb Raider</span></p></li></ul><p><strong><em><span>Final Fantasy Some Of Them</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Final Fantasy XV</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Final Fantasy 7 Remake</span></p></li></ul><p><strong><em><span>Misc Square Enix</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Monster Hunter World Iceborne </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Kingdom Hearts 3 + Remind</span></p></li></ul><hr /><h2><a name="jrpg--action--hack-and-slash" class="md-header-anchor"></a><em><span>JRPG + Action + Hack and Slash</span></em><span> </span></h2><p><em><span>Hack and Slash</span></em><span> </span></p><hr /><p><strong><em><span>Anime - Hack &amp; Slash + Open World</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Tales of Zestiria </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Tales of Berseria</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Trials of Mana (Remake) </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Ys 8 Lacrimosa of Dana </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Ni No Kuni 2 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Dragonball Z Kakorot</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Yakuza Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Yakuza 0</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Yakuza Kiwami</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Yakuza Kiwami 2 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Yakuza 3 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Yakuza 4 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Yakuza 5 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Yakuza 6: The Song of Life </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Judgement </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Muscle, Beat-em-ups</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Mad Max </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Sleeping Dogs </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Middle Earth Series</span></em></strong><span> </span></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Middle-Earth: Shadow of Mordor </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Middle Earth: Middle-Earth: Shadow of War </span></p></li></ul><h2><a name="✨-ps4-exclusives-✨" class="md-header-anchor"></a><span>✨ PS4 Exclusives ✨</span></h2><p><span>I believe Sony makes the best exclusives to push console sales.</span></p><hr /><p><strong><em><span>God of War Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>God of War III </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>God of War</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Uncharted Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Uncharted: The Nathan Drake Collection</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Uncharted 4</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Uncharted Lost Legacy</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Misc Stuff</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Marvel Spiderman</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Infamous Second Son, First Light </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Horizon Zero Dawn + DLC</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Shadow of Colossus</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Order 1886 </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Days Gone </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Rachet and Clank</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Knack II baby.</span></p></li></ul><p>&nbsp;</p><h2><a name="souls-type-🥺-☠️" class="md-header-anchor"></a><span>Souls Type 🥺 ☠️</span></h2><p><span>Yeah, pretty much rinse and repeat but get better every time. Feels like life. Great lore too (FromSofts). I have actually played DSIII till Abyss Watchers and I loved the game.</span></p><hr /><p><strong><em><span>FromSoft, the legends, pioneers.</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Dark Souls Remastered</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Dark Souls 2 </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Bloodborne </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Dark Souls 3 </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Sekiro </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Nioh Series, the younger brother of Souls games and Borderlands</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Nioh </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Nioh 2</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Misc Stuff</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Nier Automata </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Codevein </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Devil May Cry Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>DMC </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>DMC 5 </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>DarkSiders Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Darksiders 3 </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Darksiders Genesis </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Sci-fi Mech Souls, new in the game</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Surge</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Surge 2</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Looking good!</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Remnant: From the Ashes</span></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2><a name="bethesda-stuff-😂" class="md-header-anchor"></a><span>Bethesda Stuff 😂</span></h2><p><span>What do I need to write here? Love or hate it, they always are fantastic.</span></p><hr /><p><strong><em><span>Classics</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Skyrim </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Fallout 4</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Wolfenstein Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Wolfenstein: The New Order (2014)</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Wolfenstein: The Old Blood (2015)</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Wolfenstein II: The New Colossus (2017)</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Wolfenstein: Youngblood (2019)</span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Rage 2 </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Dishonored Series</span></em></strong><span> </span></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Dishonored 1 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Dishonored 2 </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>DOOM is BOOM - Dunkey</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Doom</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Doom Eternal </span></p></li></ul><p>&nbsp;</p><h2><a name="ubisoft-stuff-🏞-🌅🌄🌠🏙" class="md-header-anchor"></a><span>Ubisoft Stuff 🏞 🌅🌄🌠🏙</span></h2><p><span>Another copy paster but fun copy paster.</span></p><hr /><p><strong><em><span>Looter Shooter, FPS, Team, etc</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Ghost Recon Wild-lands</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Division I</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Division II</span></p><p>&nbsp;</p></li></ul><p><strong><em><span>Far Cry Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Far Cry 3 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Far Cry 4 </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Far Cry Primal </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Far Cry 5</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Far Cry New Dawn </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Assassin&#39;s Creed Series</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><mark><span>Assassin&#39;s Creed II</span></mark><span>, </span><em><span>&quot;A fantastic experience, great word building and idea&quot;</span></em><span>, ~30-35hours, Main+Any%</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>Assassin&#39;s Creed Brotherhood, </span><em><span>&quot;alright, similar&quot;</span></em><span>, ~26 hours, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' disabled='disabled' checked/><p><span>Assassin&#39;s Creed Revelations, &quot;what? kinda boring but still fun&quot;, ~27 hours, Main%</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed III </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed Liberation</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed IV Black Flag </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed Unity </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed Rogue</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed Syndicate</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed Origins </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Assassin&#39;s Creed Odyssey </span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Watch Dogs, hmm</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Watch Dogs </span></p></li></ul><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Watch Dogs 2 </span></p></li></ul><p>&nbsp;</p><h2><a name="strategy-rts-action-survivals-and-maybes" class="md-header-anchor"></a><span>Strategy, RTS, Action, Survivals and Maybe&#39;s</span></h2><p><strong><em><span>Action-RPG</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Diablo III</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Starcraft II </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Grim Dawn</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Path of Exile, huh?</span></p></li></ul><p><strong><em><span>RTS/Strategy</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Age of Empires III, hmmm.</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Company of Heroes II</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Command and Conquer III</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Sudden Strike IV</span></p></li></ul><p><strong><em><span>Indies</span></em></strong></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Kingdom Rush </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Kingdom Rush Frontiers</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Kingdom Rush Origins</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Iron Marines</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Factorio</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Into the Breach</span></p></li></ul><p>&nbsp;</p><p><strong><em><span>Maybe</span></em></strong>
+<span>I&#39;m not much into horror and jump scares but these seem alright (and recommended) if played in a group. Some other stuff I wanna try too is in here.</span></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Metro 2033</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Metro Last Light</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Metro Exodus</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>The Last of Us Remastered</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Prey (Arkane)</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Death Stranding </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Injustice 2</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Mortal Kombat 11</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Detroit Become Human</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>World War Z</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Half Life Alyx, </span><em><span>Very Expensive to play as it needs a $999 Steam Index VR + high end PC</span></em></p></li></ul><p><span>Some online only games:</span></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Destiny 2 solo campaign </span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' disabled='disabled' /><p><span>Apex Legends</span></p></li></ul><p>&nbsp;</p><h2><a name="no-given-etanot-released-yet" class="md-header-anchor"></a><span>No given ETA/Not Released Yet</span></h2><p><span>Elden Ring</span></p><p><span>Gods and Monsters</span></p><p><span>Assassin&#39;s Creed Valhalla</span></p><p><span>Ghost of Tshushima</span></p><p><span>Saints Row: The Third Remastered</span></p><p><span>SpongeBob SquarePants: Battle for Bikini Bottom – Rehydrated</span></p><p><span>Destroy All Humans!</span></p><p><span>Marvel&#39;s Avengers</span></p><p><span>Cyberpunk 2077</span></p><p><span>Crysis Remastered</span></p><p><span>Godfall</span></p><p><span>Psychonauts 2</span></p><p><span>Tales of Arise</span></p><p><span>Watch Dogs: Legion</span></p><p><span>Babylon&#39;s Fall</span></p><hr /><hr /><h2><a name="analysis" class="md-header-anchor"></a><span>Analysis</span></h2><p><span>So if I put all of these on </span><a href='https://howlongtobeat.com'><span>Howlongtobeat</span></a><span> and check how much time it will take me to complete it gives a scary number: </span><strong><em><span>Around ~3200 hours.</span></em></strong></p><p><span>3200 HOURS, shit!</span></p><p><span>So that&#39;s ~133 days of 24 hour session, I can max do 6 hour sessions per day so that comes out to be around 532 days. I obviously won&#39;t be playing every day, mostly during vacations, after a stressful, busy and heavy week, etc. </span></p><p><span>I&#39;m fairly confident I have around 4-5 years of content with me and it&#39;s expanding always!</span></p><p><span>I&#39;m busy and though games are magical, pieces of art, blah, blah they are ultimately forms of entertainment. </span></p><p><strong><em><span>A costly hobby.</span></em></strong><span> </span></p><p><span>I can&#39;t promise or dedicate my time to this this much. I hope to complete these games at points in my life but I can&#39;t really look back sometimes, I&#39;m pretty sure by the time I complete these, another 100s of quality games would have come out! I&#39;m not sure whether I will play all or whether I will completely leave gaming when life gets harder. </span></p><p><span>Only time will tell.</span></p><hr /><p><span>At least when I retire, I can read this backlog and wonder if playing ALL or some of them was worth it or not?</span></p><p><span>Till then, Ankit.</span></p><hr /><hr /><h4><a name="ustrongspanchanges-spanstrongu" class="md-header-anchor"></a><u><strong><span><span>Changes: </span></span></strong></u></h4><p><span>18/05/2020: Added the list! Probably missed few. I&#39;ll see to it next time I update around August-September when new games will be announced.</span></p></div>
+</body>
+</html>
