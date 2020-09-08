@@ -907,9 +907,10 @@
     /* Webfont: OfficeCodePro-BoldItalic */
     
     html {
-        background: #000000;
+        background-image: url("texture.png");
         /* or
     text-shadow: #fff 0px 1px 1px;*/
+    background-repeat: repeat;
         text-rendering: geometricPrecision;
     }
     
@@ -918,7 +919,7 @@
         font-weight: 300;
         font-size: 1.575em;
         letter-spacing: 0px;
-        color: silver;
+        color: black;
 
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: subpixel-antialiased;
@@ -976,7 +977,7 @@
     }
     
     a {
-        color: gray;
+        color: blue;
         text-decoration: none; 
         transition: color .15s ease-in;
         text-rendering: optimizeLegibility;
@@ -986,11 +987,23 @@
     // or*/
     }
     a:hover {
-        color:white;
+        color:blue;
         font-style: italic;
         text-decoration: underline; 
   
     }
+
+    .vglink:hover{
+        
+        text-decoration: underline;
+        font-style: normal;
+    }
+
+
+    .linkdd:hover{
+        font-style: normal;
+        font-weight: bold;
+    }*/
     
     h1,
     h2,
@@ -1100,7 +1113,7 @@
     }
     
     h1 {
-        color: silver;
+        color: black;
     }
     
     h2,
@@ -1419,13 +1432,26 @@
 
 <body class='typora-export'>
     <div id='write' class=''>
-        <p><a href='/work/work.html'><span>work</span></a><span> · </span><a href='https://a-t.netlify.app'><span>blog</span></a><span> · </span><a href='https://sudoankit.github.io'><span>explorations</span></a><span> · </span><a href='/news.html'><span>news</span></a><span>  · <a style="text-decoration: none; font-style: normal;" href='/vg/vg.html'> —|>>>>>></a></span></p>
+        <p><a href='https://a-t.netlify.app'><span>blog</span></a><span> · </span><a href='https://sudoankit.github.io'><span>explorations</span></a><span> · </span><a href='/news.html'><span>news</span></a><span>  · <a class="vglink" href='/vg/vg.html'> —|>>>>>></a></span></p>
         <h1><a name="uankit-pandau" class="md-header-anchor"></a><u><span>Ankit Panda.</span></u></h1>
-        <p><span></span>
+        <p>
+
+
         <p><span>I&#39;m interested in Computational Cognitive Science, Machine Learning, Vision + Graphics and Mathematics.</span></p>
-        <p><span>I completed my bachelors from </span><a href='#'><span>IIIT-BH</span></a><span> in CS and then worked for a while at </span> <a href=''><span>IIT-BBS</span></a><span> on AR and Computer Vision. </span></p>
+
+        <p>
+            <span>I completed my bachelors from </span>
+
+            <a class="linkdd" href='https://en.wikipedia.org/wiki/International_Institute_of_Information_Technology,_Bhubaneswar'><span>IIIT-BH</span></a>
+
+            <span>in CS and then worked for a while at </span> <a class="linkdd"href='https://www.iitbbs.ac.in'><span>IIT-BBS</span></a><span> on AR and Computer Vision. 
+            </span>
+        </p>
+
         <p><span>I care passionately about quality of work, aesthetics and design.</span></p>
+
         <p><span>Currently, I&#39;m working on probabilistic numerics, numerical optimization, bayesian statistics and machine learning.</span></p>
+
         <p><span>Stay Safe. </span></p>
         <p><span>Ankit 😷, 2020.</span>
     </div>
