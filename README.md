@@ -2,9 +2,9 @@
 
 Personal website with links to my projects, blog, research notes and etc.
 
-I made this website using Typora HTML export with some custom CSS I wrote. My philosophy is clean, minimal and a very fast website ( it's under 50KB ).
+I made this website using Typora HTML export with some custom CSS I wrote. My philosophy is clean, minimal and a very fast website ( it's around 200KB, the Apple notes texture is taking about 170 KB).
 
-I tend to keep my website under 1MB as long I can.
+I will try to keep my website under 1MB as long I can.
 
 ## Blog
 
