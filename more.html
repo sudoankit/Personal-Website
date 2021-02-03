@@ -4,9 +4,8 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width initial-scale=1'>
-    <title>News</title>
+    <title>Ankit Panda</title>
     <style type='text/css'>
-
     html {
         overflow-x: initial !important;
     }
@@ -36,7 +35,7 @@
         left: 0px;
         right: 0px;
         font-size: 1rem;
-        line-height: 1.42857143;
+        /*line-height: 1.42857143;*/
         overflow-x: hidden;
         background-image: inherit;
         background-size: inherit;
@@ -906,27 +905,23 @@
     /* Webfont: OfficeCodePro-Italic */
     /* Webfont: OfficeCodePro-Bold */
     /* Webfont: OfficeCodePro-BoldItalic */
-
-/*================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================== USER SETTINGS ============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================*/
+    /*================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================== USER SETTINGS ============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================*/
     
-     html {
+    html {
         background-image: url("texture.png");
         /* or
     text-shadow: #fff 0px 1px 1px;*/
-    background-repeat: repeat;
+        background-repeat: repeat;
         text-rendering: geometricPrecision;
     }
     
-    
-    body {
-
+     body {
         font-family: 'Helvetica', sans-serif;
         font-weight: 300;
-        font-size: 1.475em;
+        font-size: 1.4em;
         letter-spacing: 0px;
         color: black;
-        text-align: justify;
-  text-justify: inter-word;
+
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: subpixel-antialiased;
         /*-webkit-text-stroke: 0.45px;
@@ -937,17 +932,14 @@
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
     }
-
-
-    
     strong {
-        font-family: 'Helvetica', serif;
+        font-family: 'Helvetica', sans-serif;
         font-weight: 500;
-        color: black;
+        color: #303336;
     }
     
     em {
-        font-family: 'Helvetica', serif;
+        font-family: 'Helvetica', sans-serif;
         font-weight: normal;
         font-style: italic;
     }
@@ -959,7 +951,7 @@
     }
     
     div.md-toc {
-        font-family: 'Helvetica', serif;
+        font-family: 'Helvetica', sans-serif;
         font-size: 18px;
     }
     
@@ -985,20 +977,30 @@
     }
     
     a {
-        color: blue;;
-        text-decoration: none; 
+        color: blue;
+        text-decoration: none;
         transition: color .15s ease-in;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: subpixel-antialiased;
-        
         /*-webkit-text-stroke: 0.45px;
     // or*/
     }
+    
     a:hover {
-        color:blue;;
+        color: blue;
+        text-decoration: underline;
+    }
+    
+    .vglink:hover {
+        text-decoration: underline;
         font-style: normal;
-        text-decoration: underline; 
-  
+    }
+    
+    .linkdd {}
+    
+    .linkdd:hover {
+        font-style: normal;
+        /*font-weight: bold;*/
     }
     
     h1,
@@ -1006,10 +1008,8 @@
     h3,
     h4,
     h5,
-
     h6 {
-
-        font-family: "Helvetica", sans-serif;
+        font-family: 'Helvetica', sans-serif;
         font-weight: bold;
         letter-spacing: -0.45px;
         word-spacing: 0.5px;
@@ -1092,11 +1092,10 @@
         padding-bottom: .3em;
         letter-spacing: -0.45px;
         word-spacing: 0.5px;
-
     }
     
     h5 {
-        font-size: 1.1em;
+        font-size: 1.2em;
         line-height: 1.2;
         padding-bottom: .3em;
         letter-spacing: -0.45px;
@@ -1120,36 +1119,27 @@
     h4,
     h5,
     h6 {
-        color: black;
+        color: #303336;
     }
     
-    
-    li, p,ul,ol,dl {
-    	list-style-type: "▸ ";
-        margin-top: 1.6rem;
-        margin-bottom: 1.6rem;
-
-    }
-   
-
+    p,
     blockquote,
-    
-    
+    ul,
+    ol,
+    dl,
     table {
-        list-style-type: '-';
+        list-style-type: disc margin: 0.8em 0;
         margin-top: 1.6rem;
         margin-bottom: 1.6rem;
     }
     
     hr {
-        height: 4px;
-        padding: 0;
-        margin: 16px 0;
-        background-color: #FFFFFF;
+        height: 2px;
+        background-color: inherit;
         border: 0 none;
         overflow: hidden;
         box-sizing: content-box;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #000;
     }
     
     body > h2:first-child {
@@ -1433,40 +1423,69 @@
     .footnote-line {
         white-space: normal;
     }
+    </style>
+</head>
 
+<body class='typora-export'>
+    <div id='write' class=''>
+        <a href='/index.html'> <span>home</span> </a> <span> 
+                <font color="gray"> / </font>
+            </span>
+        <a href='https://sudoankit.github.io'> <span>blog</span> </a> <span> 
+                <font color="gray"> / </font>
+            </span>
+        <a href='/notes.html'> <span>notes</span> </a> <span> 
+                <font color="gray"> / </font> 
+            </span> <span>more</span> </a>
+        <hr>
+        
+        <h5><u>Academic</u></h5>
+        
 
+        <p>These are some books I have read and find them worth.</p>
+        
+        <h6>Mathematics</h6>
+        
+        <ul>
+            <li>Linear Algebra Done Right, Sheldon Axler</li>
+            <li>Principles of Mathematical Analysis, Walter Rudin</li>
+            <li>Calculus, M. Spivak</li>
+            <li>A First Course in Complex analysis, Dennis G. Zill and Patrick Shanahan</li>
+            <li>A Book of Abstract Algebra, Charles Pinter</li>
+            <li>The Princeton Companion to Mathematics, Timothy Gowers et al</li>
+            <li>How to solve it, G Pólya</li>
+            <li>Elementary Number Theory, David M Burton</li>
+            <li>Topology, Munkres</li>
+            <li>Introduction to Linear Algebra, Gilbert Strang.</li>
+        </ul>
+        <!-- <h6>Computer Vision + Machine Learning</h6>
+        <ul>
+            <li>Computer Vision: Algorithms and Applications, Richard Szeliski</li>
+            <li>Computer Vision: Models, Learning, and Inference, Simon J. D. Prince</li>
+            <li>Learning OpenCV3 Computer Vision in C++ with the OpenCV library, Adrian Kaehler and Gary Bradski</li>
+        </ul> -->
+        <h6>Machine Learning++</h6>
+        <ul>
+            <li>Pattern Recognition and Machine Learning, Christopher M. Bishop</li>
+            <li>Elements of Statistical Learning, Trevor Hastie, Robert Tibshirani, Jerome Friedman </li>
+            <li>Deep Learning, Ian Goodfellow et al.</li>
+        </ul>
+        <h6>Neuroscience</h6>
+        <ul>
+            <li>An Introduction to Neural Networks, James A. Anderson</li>
+            <li>Principles of Neural Design, Peter Sterling.</li>
+        </ul>
 
     
+        <hr>
 
-    </style>
-
-</head>
-<body class='typora-export'>
-	<div id='write' class=''>
-		<p><span>⃪ </span>&nbsp; <a href='https://www.sudoankit.xyz/'><span>Homepage</span></a></p>
-		<h1><a name="unewsu" class="md-header-anchor"></a><u><span>News.</span></u></h1>
-
-		<h4>2018</h4>
-		
-
-				<ul>
-					<li><span>Wrote a paper, </span><a href='https://arxiv.org/abs/1809.00375'><span>PlutoAR: An Augmented Reality Interpreter for Education</span></a><span> about developing an Android/iOS app for elementary class students where they can code simple programs and visualize results in AR.</span></li>
-					<li><span>My final year undergrad project, </span><a href='https://www.dropbox.com/s/tt6srdx2jogn6av/report-100%.pdf?dl=0'><span>Augmented Reality Methods For Education</span></a><span> was awarded a perfect score in the Institute. </span></li>
-				</ul>
-		<h4>2017</h4>
-		
-				<ul>
-					<li><span>Together with my team I won </span><strong><span>#UnitedByHCL Hackathon, Manchester, UK</span></strong><span> which had cash prize of $5000.</span> </li>
-				</ul>
-		<h4>2016</h4>
-		
-				
-				<ul>
-					<li><span>I and my team took part in </span><strong><span>ACM ICPC, Zonal Contest @IIT-Kharagpur</span></strong><span> after qualifying the local selection rounds. </span></li>
-				</ul>
-			
-		<p>&nbsp;</p>
-	</div>
+        <h5><u>Non Academic</u></h5>
+        
+        <p><b>Books:</b> An up to date list is at <a href="https://www.goodreads.com/user/show/41197270-ankit">Goodreads.</a></p>
+        <p><b>Movies:</b> I watch mosly science fiction, action, thriller and animation. An up to date list is here on <a href="https://letterboxd.com/sudoankit/films/">letterboxd.</a></p>
+        <p>🚀</p>
+        <p>&nbsp;</p>
+    </div>
 </body>
 
 </html>
