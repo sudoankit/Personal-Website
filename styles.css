@@ -1,3 +1,7 @@
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+</style>
+
 
     html {
         overflow-x: initial !important;
@@ -922,7 +926,8 @@
  /*======================================================================================
  /*======================================================================================
  */
-    
+     
+
     html {
         background-color: #fff;
         
@@ -930,7 +935,7 @@
     }
 
     body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        font-family: 'Work Sans', sans-serif;
        	font-weight: 300;
         line-height: 1.6em;
         font-size: 22px;
@@ -944,13 +949,13 @@
     }
 
     strong {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif 
+        font-family: 'Work Sans', sans-serif;
         font-weight: 500;
         color: #303336;
     }
     
     em {
-     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif 
+     font-family: 'Work Sans', sans-serif;
         font-weight: normal;
         font-style: italic;
     }
@@ -962,7 +967,7 @@
     }
     
     div.md-toc {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif 
+        font-family: 'Work Sans', sans-serif;
         font-size: 18px;
     }
     
@@ -1026,7 +1031,7 @@
     h4,
     h5,
     h6 {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif 
+        font-family: 'Work Sans', sans-serif;
         font-style: none;
         letter-spacing: -0.45px;
         word-spacing: 0.5px;
