@@ -1024,6 +1024,11 @@
 
         /*font-weight: bold;*/
     }
+
+    .sogrey{
+    color:grey;
+}
+    
     
     h1,
     h2,
@@ -1428,7 +1433,9 @@
     footer {
         font-family: "Lyon Display", sans-serif;
     }
-    
+
+
+
     .CodeMirror {
         /* Set height, width, borders, and global font properties here */
         text-rendering: optimizeLegibility;
