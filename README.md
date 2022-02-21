@@ -2,9 +2,9 @@
 
 Personal website with links to my projects, blog, research notes and etc.
 
-I made this website using Typora HTML export with some custom CSS I wrote. My philosophy is clean, minimal and a very fast website ( it's around <500KB, the Apple notes texture takes about 170 KB and my resume is around 120KB).
+I made this website using Github's Primer CSS. I really love minimal design and beautiful typography. I use the fantastic **Inter** font for everything apart from a few pages that use Source Sans Pro. 
 
-I will try to keep my website under 1MB as long I can.
+The website is about < 80kb in size.
 
 ## Blog
 
@@ -14,4 +14,4 @@ A research blog where I write long, quality and sometimes interactive posts. Tut
 
 ---
 
-Ankit, 2021.
+Ankit, 2022.
