@@ -131,8 +131,7 @@
   border-bottom: 1px solid hsla(210,18%,87%,1);
   height: .25em;
   padding: 0;
-  margin: 24px 0;
-  background-color: #d0d7de;
+  background-color: lightgray;
   border: 0;
 }
 
