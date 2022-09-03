@@ -101,36 +101,6 @@ MathJax = {
   height: 2px ;
 }
 
-
-
-.markdown-body abbr {
-  position: relative;
-  
-}
-
-.markdown-body abbr[title] {
-  position: relative;
-  text-decoration: black underline;
-  
-}
-
-
-.markdown-body abbr:hover::after {
-  color: black;
-  background: #FFFFCD;
-  border-radius: 4px;
-  border: 1px solid black;
-  bottom: 100%;
-  content: attr(title);
-  display: block;
-  left: 100%;
-  padding: 1em;
-  position: absolute;    
-  width: 280px;
-  z-index: 1;
-}
-
-
 } 
 
 </style>
@@ -154,7 +124,7 @@ MathJax = {
 <p> To understand clearly, quickly recall the definition of a function:</p>
 
 <div class="definition">
-<p>A function, $f$, is a <abbr title="abstract mathematical concept, an object is anything that has been or could be formally defined">mathematical object</abbr> that maps or relates elements of two sets, the domain $A$ to the one called the co-domain $B$
+<p>A function, $f$, is a <a href="https://en.wikipedia.org/wiki/Mathematical_object"> mathematical object</a> that maps or relates elements of two sets, the domain $A$ to the one called the co-domain $B$
 and for $f$ be a function $f : A \to B$, $f$ assigns to each element of $A$ to <b>exactly one element</b> of $B$. </p> <p> I'm not fond of this quite washed out definition. I like this one found in set theory: $$f = \{ (a,b) \in A \times B : b=f(a) \} \subseteq A \times B$$
   </p>
 </div>
