@@ -51,6 +51,10 @@ MathJax = {
 
   }
 
+  .markdown-body p .blue {
+    color: blue;
+  }
+
   .markdown-body .definition {
   text-align: justify;
   font-weight: 400;
@@ -60,6 +64,20 @@ MathJax = {
   padding-right: 15px;
   
   background: #edf6f9;
+  display: block;
+  margin: 12px 0;
+}
+
+
+ .markdown-body .definition2 {
+  text-align: justify;
+  font-weight: 400;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  border: 1px solid black;
+  
   display: block;
   margin: 12px 0;
 }
@@ -95,36 +113,68 @@ MathJax = {
 
 } 
 
+
 </style>
+
+
 <article class="markdown-body">
 
 <a href="/">home</a> <span style="color:gray"> / </span> 
 
 <a href="/recs.html">notes</a> <span style="color:gray"> / </span>
 
-<span style="color: black;">Algorithms Illuminated</a> 
+<span style="color: black;">algorithms-illuminated</a> 
 
 <span style="font-size: smaller;"> 
 
 <h2>Algorithms Illuminated <span style="color: gray;">by Tim Roughgarden</h2>
-
-<strong>Short Review.</strong><div class="definition"><p>Incredible! This book gradually introduces core concepts, algorithms while explaining much of the rigorous math necessary to grow and develop your skills to become a computer scientist specializing in algorithms. </p>
+<details><summary>
+<strong>Short Review.</strong></summary><div class="definition"><p>Incredible! This book gradually introduces core concepts, algorithms while explaining much of the rigorous math necessary to grow and develop your skills to become a computer scientist specializing in algorithms. </p>
 
 <p>This book bridges the gap between softer (less rigorous) algorithmic books like "A Common-Sense Guide to Data Structures and Algorithms, Jay Wengrow" and classics, rigorous textbooks like "Introduction to Algorithms, Cormen, Leiserson, Rivest & Stein" or "Algorithm Design, Kleinberg & Tardos".</p>
 
 <p>The multiple choice excercises are fundamental but require deep understanding of the material presented, solutions to more than $80\%$ of the problems are provided and succintly explained. Challenge problems are exciting and require discussions and re-reading, explorations and checking the hints given at the back to comprehend, conquer them. Language agnostic "coding" questions are provided with testcases & data sets.</p>
 
 <p>Prof. Roughgarden takes this project further by providing a whole set of YouTube lectures, an online forum to discuss and lecture slides at this <a href="https://www.algorithmsilluminated.org/"> website</a>.</p></div>
-
- <span style="font-size: smaller;"> 
-<h3>Notes & (my) Solutions to Selected Questions.</h3>
+</details>
 
 <hr>
-  
-<!-- <h3>Chapter 1: </h3>
- 
-<p></p> -->
-In progress, :( 
+
+ <span style="font-size: smaller;"> 
+<h3>Chapter 1, Karatsuba & Merge Sort</h3>
+ </span>
+<ul>
+<li> Fairly introductory chapter, focusing on why algorithms are <i>nice & fun</i> and on the ethos of algorithm design - "Can we do better?"</li>
+
+<li> Discusses, gives a broad view on the "divide and conquer" algorithm design paradigm by explaining if we can get better time complexities on integer multiplication and the classical problem of sorting by giving examples. </li>
+
+<li> Asks whether Integer Multiplication in less than trivial $O(n^2)$ is possible? The Karatsuba algorithm is discussed (a recursive algorithm using Gauss's trick to multiply), the analysis is left for later (when the Master's Theorem is explained)</li>
+
+<li>We jump straight to Merge Sort - a classic, which is simple, yet blazingly fast - $O(n \log n)$, sorting algorithm and it's thorough analysis on work done at each recurisve level, number of levels in the recursive tree ($\log n + 1$ levels). Very fundamental and important. </li>
+
+<li>This chapter ends with another broad overview on time analysis, "fast algorithm?" and (for-free primitives = fast linear or near linear algorithms you can use to solve complex problems having larger time complexities, without worrying about increasing time complexity)</li>
+</ul>
+
+<p>My Answers to Selected Problems:</p>
+
+<p> <b>Problem 1.2. (B)</b> $O(n \log n)$, why? Work done per level is $3^j \times \frac{8n}{3^j} = 8n$; Work done for all levels is $ 8n \times (\log_3 n + 1) \approx n \cdot 
+\log_3n$, which in asymptotic notation is $O(n \log n)$.</p>
+
+<p> <b>Problem 1.3. (E)</b> $nk^2$, why? Work done is, $n \times \sum_{i = 1}^{k} k \approx nk^2$ which in asymptotic notation is $O(nk^2)$. Note, running time taken depends on both $n, k$, not just on $n$.  
+<hr>
+ <span style="font-size: smaller;"> 
+<h3>Chapter 2, Asymptotic Analysis</h3>
+ </span>
+
+<div class="definition2">Very important chapter. Please read this chapter thoroughly. It is essential you understand these definations, terms and how they are calculated. Prior experience in calculus (esp. functions, graphs and limits) makes this easier, but is not required. </div>
+
+<div class="definition"> <u>Important</u>: Big-$O$, Big-$\Omega$, Big-$\Theta$ are all <b>sets of functions</b>. That is, $$f(n) \in O(n), \Omega(n), \Theta(n)$$ We are sloppy (and in a good way!) and write $f(n) = O(n)$ for ease of calculating and more so  as the set-theoretic way defeats the very purpose of the notation - approximation. Still, do remember that these are <b>sets</b>. <br><br> Fun history fact: $O$ comes from the german word, <b>Ordnung</b>, which roughly means classification or order or regulation.</div>
+<br>
+<ul>
+<li>Prof. Roughgarden explains these notations very succintly with lots of examples, graphs and quick-questions.</li>
+<li>I do think "Introduction to Algorithms by Cormen et al." has a much more rigorous and math heavy explanations for this topic. I recommend going through that chapter after you have completed all the problems in this book (Illuminated). Another good book is "Asymptotic Methods in Analysis" by Nicholas de Bruijn (Dover).</li>
+<li> The upper bound of the running time of an algorithm is the most important characteristic that most algorithmists look at and try to improve.</li>
+</ul>
 
 
 </article>
