@@ -5,11 +5,15 @@
   margin: 0;
   color: #171923;
   background-color: white;
-  font-family:  'Inter', sans-serif; 
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
   font-size: 22px;
   line-height: 1.5;
   word-wrap: break-word;
 }
+
+/* CSS */
+
 
 .markdown-body .octicon {
   display: inline-block;
